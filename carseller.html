@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isuzu Dealer - Find Your Truck or SUV</title>
+    <link rel="stylesheet" href="carstyle.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>IsuzuX</h1>
+            <p>Your Trusted Isuzu Dealer</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#cars">Vehicles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Discover Power and Performance</h2>
+        <p>Explore Isuzu's line-up of rugged trucks, fuel-efficient pickups, and dependable SUVs.</p>
+        <button onclick="window.location.href='#cars'">Browse Isuzu Vehicles</button>
+    </section>
+
+    <section id="cars">
+        <h2>Available Isuzu Vehicles</h2>
+        <div class="car-list">
+            <div class="car-item">
+                <img src="dmax.jpeg" alt="Isuzu D-MAX">
+                <h3>2023 Isuzu D-MAX</h3>
+                <p>Price: $28,000</p>
+                <button onclick="window.location.href='#contact'">Inquire</button>
+            </div>
+            <div class="car-item">
+                <img src="mux.jpeg" alt="Isuzu MU-X">
+                <h3>2023 Isuzu MU-X</h3>
+                <p>Price: $39,000</p>
+                <button onclick="window.location.href='#contact'">Inquire</button>
+            </div>
+            <div class="car-item">
+                <img src="npr.jpeg" alt="Isuzu NPR Truck">
+                <h3>2023 Isuzu NPR</h3>
+                <p>Price: $44,000</p>
+                <button onclick="window.location.href='#contact'">Inquire</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Ong Jing Lye - Isuzu Dealer Representative</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="email-icon.png" alt="Email Icon" class="icon">
+                <a href="mailto:ongjinglye@isuzux.com">ongjinglye@isuzux.com</a>
+            </div>
+            <div class="contact-item">
+                <img src="phone-icon.png" alt="Phone Icon" class="icon">
+                <a href="tel:+60123456789">+60 12-345 6789</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 IsuzuX. All rights reserved. JUST DUMMY</p>
+    </footer>
+
+    <script>
+        // Thank you alert
+        document.querySelectorAll('.car-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert("Thank you for your interest in Isuzu. We'll get back to you shortly!");
+            });
+        });
+
+        // Contact section animation
+        const contactSection = document.getElementById('contact');
+        window.addEventListener('scroll', () => {
+            const rect = contactSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                contactSection.style.opacity = 1;
+            }
+        });
+    </script>
+</body>
+
+</html>
