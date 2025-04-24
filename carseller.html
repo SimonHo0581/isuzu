@@ -11,11 +11,15 @@
 <body>
     <header>
         <div class="logo">
-            <h1>IsuzuX</h1>
+            <h1>Jing Lye ISUZU</h1>
             <p>Your Trusted Isuzu Dealer</p>
         </div>
         <nav>
-            <ul>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <div class="menu-close" id="menu-close" style="display:none;">&times;</div>
+
+            <ul id="menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#cars">Vehicles</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -53,6 +57,7 @@
         </div>
     </section>
 
+
     <section id="contact">
         <h2>Contact Me</h2>
         <p>Ong Jing Lye - Isuzu Dealer Representative</p>
@@ -68,16 +73,40 @@
         </div>
     </section>
 
+    <section id="birthday">
+        <div class="birthday-banner">
+            <h2>🎉 Happy Birthday, Ong Jing Lye! 🎉</h2>
+            <p>Wishing you joy, success, and more horsepower in life! Enjoy your special day with Isuzu vibes!</p>
+        </div>
+        <canvas id="confetti-canvas"></canvas>
+        <div class="balloon-container">
+            <div class="balloon red"></div>
+            <div class="balloon blue"></div>
+            <div class="balloon green"></div>
+            <div class="balloon yellow"></div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 IsuzuX. All rights reserved. JUST DUMMY</p>
+        <p>&copy; 2025 Jing Lye Isuzu. All rights reserved.</p>
     </footer>
 
     <script>
-        // Thank you alert
-        document.querySelectorAll('.car-item button').forEach(button => {
-            button.addEventListener('click', () => {
-                alert("Thank you for your interest in Isuzu. We'll get back to you shortly!");
-            });
+        // Hamburger menu toggle
+        const menu = document.getElementById('menu');
+        const toggle = document.getElementById('menu-toggle');
+        const closeBtn = document.getElementById('menu-close');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+            toggle.style.display = 'none';
+            closeBtn.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            menu.classList.remove('show');
+            toggle.style.display = 'block';
+            closeBtn.style.display = 'none';
         });
 
         // Contact section animation
@@ -88,6 +117,134 @@
                 contactSection.style.opacity = 1;
             }
         });
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = 200;
+
+        const confetti = Array.from({ length: 100 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * -canvas.height,
+            radius: Math.random() * 6 + 2,
+            color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+            speed: Math.random() * 2 + 1,
+            drift: Math.random() * 2 - 1,
+        }));
+
+        function drawConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confetti.forEach(c => {
+                ctx.beginPath();
+                ctx.arc(c.x, c.y, c.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = c.color;
+                ctx.fill();
+                c.y += c.speed;
+                c.x += c.drift;
+
+                if (c.y > canvas.height) {
+                    c.y = -10;
+                    c.x = Math.random() * canvas.width;
+                }
+            });
+            requestAnimationFrame(drawConfetti);
+        }
+
+        drawConfetti();
+
+        const fireCanvas = document.getElementById('firework-canvas');
+        const fctx = fireCanvas.getContext('2d');
+        fireCanvas.width = window.innerWidth;
+        fireCanvas.height = window.innerHeight;
+
+        class Firework {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * fireCanvas.width;
+                this.y = fireCanvas.height;
+                this.targetY = Math.random() * fireCanvas.height / 2;
+                this.speed = 3 + Math.random() * 2;
+                this.exploded = false;
+                this.particles = [];
+            }
+
+            update() {
+                if (!this.exploded) {
+                    this.y -= this.speed;
+                    if (this.y < this.targetY) {
+                        this.explode();
+                    }
+                } else {
+                    this.particles.forEach(p => p.update());
+                    this.particles = this.particles.filter(p => p.life > 0);
+                    if (this.particles.length === 0) this.reset();
+                }
+            }
+
+            explode() {
+                this.exploded = true;
+                const count = 30;
+                for (let i = 0; i < count; i++) {
+                    this.particles.push(new Particle(this.x, this.y));
+                }
+            }
+
+            draw(ctx) {
+                if (!this.exploded) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                    ctx.fillStyle = '#fff';
+                    ctx.fill();
+                } else {
+                    this.particles.forEach(p => p.draw(ctx));
+                }
+            }
+        }
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.angle = Math.random() * 2 * Math.PI;
+                this.speed = Math.random() * 4 + 2;
+                this.life = 60;
+                this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+            }
+
+            update() {
+                this.x += Math.cos(this.angle) * this.speed;
+                this.y += Math.sin(this.angle) * this.speed;
+                this.life--;
+            }
+
+            draw(ctx) {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        const fireworks = Array.from({ length: 5 }, () => new Firework());
+
+        function animateFireworks() {
+            fctx.fillStyle = 'rgba(0,0,0,0.1)';
+            fctx.fillRect(0, 0, fireCanvas.width, fireCanvas.height);
+
+            fireworks.forEach(firework => {
+                firework.update();
+                firework.draw(fctx);
+            });
+
+            requestAnimationFrame(animateFireworks);
+        }
+
+        animateFireworks();
+
+
+
     </script>
 </body>
 
