@@ -2,250 +2,121 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isuzu Dealer - Find Your Truck or SUV</title>
-    <link rel="stylesheet" href="carstyle.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ong Jing Lye - Trusted Isuzu Truck & SUV Dealer. Find powerful and reliable vehicles today.">
+  <title>Ong Jing Lye - Trusted Truck & SUV Dealer</title>
+  <link rel="stylesheet" href="carstyle.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>Jing Lye ISUZU</h1>
-            <p>Your Trusted Isuzu Dealer</p>
-        </div>
-        <nav>
-            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-            <div class="menu-close" id="menu-close" style="display:none;">&times;</div>
 
-            <ul id="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#cars">Vehicles</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="branding">
+      <h1>Ong Jing Lye</h1>
+      <p>Your Trusted Isuzu Dealer</p>
+    </div>
+    <nav role="navigation" aria-label="Main Navigation">
+      <div id="menu-toggle" aria-label="Open menu" role="button" tabindex="0">&#9776;</div>
+      <ul id="menu">
+        <div id="menu-close" aria-label="Close menu" role="button" tabindex="0">&times;</div>
+        <li><a href="#">Home</a></li>
+        <li><a href="#cars">Vehicles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <aside class="social-sidebar">
+    <a href="https://www.facebook.com/share/19cj7QUUAW/?mibextid=wwXIfr" class="social-icon facebook" target="_blank" title="Follow on Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.tiktok.com/@ongisuzu?_t=ZS-8vvrjIw7N3N&_r=1" class="social-icon tiktok" target="_blank" title="Follow on TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </aside>
+
+  <main>
     <section id="hero">
-        <h2>Discover Power and Performance</h2>
-        <p>Explore Isuzu's line-up of rugged trucks, fuel-efficient pickups, and dependable SUVs.</p>
-        <button onclick="window.location.href='#cars'">Browse Isuzu Vehicles</button>
+      <h2>Discover Power & Performance</h2>
+      <p>Explore Isuzu's rugged trucks and efficient pickups.</p>
+      <button onclick="window.location.href='#cars'">Browse Vehicles</button>
     </section>
 
     <section id="cars">
-        <h2>Available Isuzu Vehicles</h2>
-        <div class="car-list">
-            <div class="car-item">
-                <img src="dmax.jpeg" alt="Isuzu D-MAX">
-                <h3>2023 Isuzu D-MAX</h3>
-                <p>Price: $28,000</p>
-                <button onclick="window.location.href='#contact'">Inquire</button>
-            </div>
-            <div class="car-item">
-                <img src="mux.jpeg" alt="Isuzu MU-X">
-                <h3>2023 Isuzu MU-X</h3>
-                <p>Price: $39,000</p>
-                <button onclick="window.location.href='#contact'">Inquire</button>
-            </div>
-            <div class="car-item">
-                <img src="npr.jpeg" alt="Isuzu NPR Truck">
-                <h3>2023 Isuzu NPR</h3>
-                <p>Price: $44,000</p>
-                <button onclick="window.location.href='#contact'">Inquire</button>
-            </div>
+      <h2>Available Vehicles</h2>
+      <div class="car-list">
+        <div class="car-item">
+          <img src="dmax.jpeg" alt="2023 Isuzu D-MAX pickup truck">
+          <h3>2023 Isuzu D-MAX</h3>
+          <p>Price: $28,000</p>
+          <button onclick="window.location.href='dmax.html'">View Models</button>
         </div>
+        <div class="car-item">
+          <img src="npr.jpeg" alt="2023 Isuzu NPR Lorry">
+          <h3>2023 Isuzu Lorry</h3>
+          <p>Price: $44,000</p>
+          <button onclick="window.location.href='#contact'">Inquire</button>
+        </div>
+      </div>
     </section>
-
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Ong Jing Lye - Isuzu Dealer Representative</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <img src="email-icon.png" alt="Email Icon" class="icon">
-                <a href="mailto:ongjinglye@isuzux.com">ongjinglye@isuzux.com</a>
-            </div>
-            <div class="contact-item">
-                <img src="phone-icon.png" alt="Phone Icon" class="icon">
-                <a href="tel:+60123456789">+60 12-345 6789</a>
-            </div>
+      <h2>Get In Touch</h2>
+      <p class="contact-subtitle">Reach out to Ong Jing Lye - Your Trusted Isuzu Dealer Representative</p>
+
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-envelope icon"></i>
+          </div>
+          <div class="contact-text">
+            <h3>Email Me</h3>
+            <p><a href="mailto:jinglye@gmail.com">jinglye@gmail.com</a></p>
+          </div>
         </div>
+
+        <div class="contact-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-phone-alt icon"></i>
+          </div>
+          <div class="contact-text">
+            <h3>Call Me</h3>
+            <p><a href="tel:+60178616750">+60 17-8616 750</a></p>
+            <p><a href="tel:+601131519369">+60 113-1519 369</a></p>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section id="birthday">
-        <div class="birthday-banner">
-            <h2>🎉 Happy Birthday, Ong Jing Lye! 🎉</h2>
-            <p>Wishing you joy, success, and more horsepower in life! Enjoy your special day with Isuzu vibes!</p>
-        </div>
-        <canvas id="confetti-canvas"></canvas>
-        <div class="balloon-container">
-            <div class="balloon red"></div>
-            <div class="balloon blue"></div>
-            <div class="balloon green"></div>
-            <div class="balloon yellow"></div>
-        </div>
-    </section>
+  <footer>
+    <p>&copy; 2025 OJL ISUZU. All rights reserved.</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Jing Lye Isuzu. All rights reserved.</p>
-    </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const menuClose = document.getElementById('menu-close');
 
-    <script>
-        // Hamburger menu toggle
-        const menu = document.getElementById('menu');
-        const toggle = document.getElementById('menu-toggle');
-        const closeBtn = document.getElementById('menu-close');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.add('show');
+    });
 
-        toggle.addEventListener('click', () => {
-            menu.classList.toggle('show');
-            toggle.style.display = 'none';
-            closeBtn.style.display = 'block';
-        });
+    menuClose.addEventListener('click', () => {
+      menu.classList.remove('show');
+    });
 
-        closeBtn.addEventListener('click', () => {
-            menu.classList.remove('show');
-            toggle.style.display = 'block';
-            closeBtn.style.display = 'none';
-        });
+    // Optional: Add keyboard accessibility
+    menuToggle.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') menu.classList.add('show');
+    });
+    menuClose.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') menu.classList.remove('show');
+    });
+  </script>
 
-        // Contact section animation
-        const contactSection = document.getElementById('contact');
-        window.addEventListener('scroll', () => {
-            const rect = contactSection.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                contactSection.style.opacity = 1;
-            }
-        });
-        const canvas = document.getElementById('confetti-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = 200;
-
-        const confetti = Array.from({ length: 100 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * -canvas.height,
-            radius: Math.random() * 6 + 2,
-            color: `hsl(${Math.random() * 360}, 100%, 50%)`,
-            speed: Math.random() * 2 + 1,
-            drift: Math.random() * 2 - 1,
-        }));
-
-        function drawConfetti() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            confetti.forEach(c => {
-                ctx.beginPath();
-                ctx.arc(c.x, c.y, c.radius, 0, 2 * Math.PI);
-                ctx.fillStyle = c.color;
-                ctx.fill();
-                c.y += c.speed;
-                c.x += c.drift;
-
-                if (c.y > canvas.height) {
-                    c.y = -10;
-                    c.x = Math.random() * canvas.width;
-                }
-            });
-            requestAnimationFrame(drawConfetti);
-        }
-
-        drawConfetti();
-
-        const fireCanvas = document.getElementById('firework-canvas');
-        const fctx = fireCanvas.getContext('2d');
-        fireCanvas.width = window.innerWidth;
-        fireCanvas.height = window.innerHeight;
-
-        class Firework {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = Math.random() * fireCanvas.width;
-                this.y = fireCanvas.height;
-                this.targetY = Math.random() * fireCanvas.height / 2;
-                this.speed = 3 + Math.random() * 2;
-                this.exploded = false;
-                this.particles = [];
-            }
-
-            update() {
-                if (!this.exploded) {
-                    this.y -= this.speed;
-                    if (this.y < this.targetY) {
-                        this.explode();
-                    }
-                } else {
-                    this.particles.forEach(p => p.update());
-                    this.particles = this.particles.filter(p => p.life > 0);
-                    if (this.particles.length === 0) this.reset();
-                }
-            }
-
-            explode() {
-                this.exploded = true;
-                const count = 30;
-                for (let i = 0; i < count; i++) {
-                    this.particles.push(new Particle(this.x, this.y));
-                }
-            }
-
-            draw(ctx) {
-                if (!this.exploded) {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-                    ctx.fillStyle = '#fff';
-                    ctx.fill();
-                } else {
-                    this.particles.forEach(p => p.draw(ctx));
-                }
-            }
-        }
-
-        class Particle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.angle = Math.random() * 2 * Math.PI;
-                this.speed = Math.random() * 4 + 2;
-                this.life = 60;
-                this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
-            }
-
-            update() {
-                this.x += Math.cos(this.angle) * this.speed;
-                this.y += Math.sin(this.angle) * this.speed;
-                this.life--;
-            }
-
-            draw(ctx) {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-            }
-        }
-
-        const fireworks = Array.from({ length: 5 }, () => new Firework());
-
-        function animateFireworks() {
-            fctx.fillStyle = 'rgba(0,0,0,0.1)';
-            fctx.fillRect(0, 0, fireCanvas.width, fireCanvas.height);
-
-            fireworks.forEach(firework => {
-                firework.update();
-                firework.draw(fctx);
-            });
-
-            requestAnimationFrame(animateFireworks);
-        }
-
-        animateFireworks();
-
-
-
-    </script>
 </body>
 
 </html>
